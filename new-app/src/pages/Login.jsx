@@ -7,13 +7,13 @@ export default function Login() {
     const[password,setPassword]=useState("");
     function handleSubmit(e){
         e.preventDefault();
-        const loginData={
-            email,
-            password,
-        }
-        const tokenValue ="12345";
-        localStorage.setItem("token",tokenValue)
-        console.log(loginData);
+       try{
+        const response =await api.post('/login',{
+          email,
+          password,
+        });
+    }catch(error){
+      console.error("login failed", error.response?.data?.message ||error.message);
     }
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
@@ -56,4 +56,5 @@ export default function Login() {
       </div>
     </div>
   );
-}
+    };
+    
