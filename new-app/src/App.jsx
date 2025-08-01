@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import AdminHome from './pages/Admin/Home';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-
+import ProtectedRoute from "./utils/ProtectedRoutes";
 
 
 function App() {
@@ -13,7 +13,13 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login/>} />
-        <Route path="/dashboard/admin" element={<AdminHome/>} />
+        <Route path="/dashboard/admin" element={ 
+          <ProtectedRoute>
+          <AdminHome/>
+          </ProtectedRoute>
+
+          } />
+
         <Route path="/about" element={<About />} />
       </Routes>
       <ToastContainer

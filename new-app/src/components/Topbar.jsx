@@ -1,6 +1,6 @@
 import { FaUsersGear } from "react-icons/fa6";
 import { FaSearch, FaBell, FaUser } from "react-icons/fa";
-import LogoutButton from "../Utils/Logout";
+import LogoutButton from "../utils/Logout";
 
 
 export default function Topbar() {
